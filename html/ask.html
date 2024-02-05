@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ask a Question</title>
+    <link rel="stylesheet" href="../styles/global.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h2>Ask Us A Question</h2>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="montgomery.html">Capital</a></li>
+          <li><a href="birmingham.html">Birmingham</a></li>
+          <li><a href="mobile.html">Mobile</a></li>
+          <li><a href="more_info.html">More Info</a></li>
+          <li><a href="ask.html">Ask a Question</a></li>
+        </ul>
+      </nav>
+
+      <section>
+        <form id="askQuestion">
+          <label for="firstName">First Name:</label><br />
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="Enter your first name"
+          /><br /><br />
+
+          <label for="lastName">Last Name:</label><br />
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="Enter your last name"
+          /><br /><br />
+
+          <label for="email">Email Address:</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email address"
+          /><br /><br />
+
+          <label for="confirmEmail">Confirm Email Address:</label><br />
+          <input
+            type="email"
+            id="confirmEmail"
+            name="confirmEmail"
+            placeholder="Confirm your email address"
+          /><br /><br />
+
+          <label for="question">Question:</label><br />
+          <textarea
+            id="question"
+            name="question"
+            rows="4"
+            placeholder="Ask your question here"
+          ></textarea
+          ><br /><br />
+
+          <input type="submit" value="Submit" onclick="return false;" />
+          <!-- Button won't do anything -->
+        </form>
+        <script></script>
+      </section>
+
+      <aside>
+        <p>
+          Thank you for your interest in our great state! <br />
+          We hope you have learned something new!
+        </p>
+      </aside>
+      <script src="../javascript/ask.js" defer></script>
+      <footer>
+        <p>&copy; 2024 Alabama or Bust!</p>
+      </footer>
+    </div>
+  </body>
+</html>

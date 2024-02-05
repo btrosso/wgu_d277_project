@@ -1,0 +1,260 @@
+/* --- TOP LEVEL --- */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  background: linear-gradient(
+    to bottom right,
+    rgb(48, 46, 46),
+    rgb(199, 44, 44)
+  );
+  color: white;
+}
+
+/* --- NAV SECTION --- */
+nav {
+  background: linear-gradient(to bottom, rgb(48, 46, 46), rgb(199, 44, 44));
+  grid-area: nav;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex; /* this is flex because otherwise the default display is block so the element takes up the width of the whole line */
+  justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em; /* em is a 'relative measurement' -> this means 1 em is 1 unit of the default size. Ex: if the default web browser font size is 16px then 1em is 16px */
+}
+
+a:hover {
+  /* the ':' is used to describe a specific state of the element its attached to. Think of it like this - Example Word Template: "When the user ____ on ____ element, style like this...*/
+  color: lightseagreen;
+}
+
+/* --- MAIN LAYOUT --- */
+.container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 0.2fr 0.5fr 2fr 0.3fr;
+  grid-template-areas:
+    'nav nav nav nav'
+    'head head head head'
+    'sec sec sec aside'
+    'sec sec sec aside'
+    'foot foot foot foot';
+}
+
+section {
+  grid-area: sec;
+  color: white;
+  padding: 20px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+section > img {
+  width: 60%;
+  height: 60%;
+  border-radius: 10px;
+  margin-left: 100px;
+}
+
+header {
+  grid-area: head;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px; /* Add padding to the header for better spacing */
+}
+
+img.banner_pic {
+  max-width: 100%; /* Make the image responsive within its container */
+  height: auto;
+  max-height: 150px; /* Set a maximum height for the banner */
+  border-radius: 10px;
+}
+
+aside {
+  grid-area: aside;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+footer {
+  grid-area: foot;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  font-size: 1.3em;
+}
+
+/* --- Styling for the Form ---*/
+form {
+  width: 80%;
+  margin: 0 auto;
+  /* background: blue; */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* this multi selector lets me alter the css for multiple elements and types*/
+input[type='text'],
+input[type='email'],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type='submit'] {
+  /* background-color: rgb(199, 44, 44); */
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type='submit']:hover {
+  background-color: lightseagreen;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* --- TABLE & MORE INFO --- */
+#state-seal {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+#more-info-section {
+  grid-area: sec;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.1fr 1fr;
+  /* color: white; */
+  padding: 20px;
+  grid-template-areas:
+    'tc tc lc'
+    'tc tc lc'
+    'tc tc lc';
+}
+
+.table-container {
+  grid-area: tc;
+}
+
+#food-pic {
+  width: 40%;
+  height: 40%;
+  border-radius: 10%;
+  margin-left: 10px;
+  margin-right: 20px;
+  float: left;
+}
+
+#extra-food > p {
+  padding: 30px;
+}
+
+.list-container {
+  grid-area: lc;
+  position: relative;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-container ul {
+  padding: 0;
+}
+
+.list-container ol {
+  padding-left: 20px; /* Adjust the padding for spacing between numbers and list items */
+}
+
+.list-container li {
+  margin: 5px 0; /* Adjust the margin as needed for spacing between list items */
+}
+
+#entertainmentHeading {
+  position: relative;
+  top: 70px;
+  padding-left: 10px;
+}
+
+.list-container > ul {
+  position: relative;
+  top: 50px;
+  list-style-type: square;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.checked {
+  color: lime;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  grid-area: tbl;
+}
+
+th {
+  background-color: rgb(40, 38, 38);
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(58, 9, 9);
+}
